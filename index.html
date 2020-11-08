@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/fontawesome-free-all.min.css">
+
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/media.css" />
+
+    <title data-i18n="index.title"></title>
+</head>
+
+<body>
+    <div class="container-fluid h-100">
+        <div class="card bg-dark text-white rounded-0 border-0 h-100">
+            <div class="card-body p-0">
+                <video class="embed-responsive-item" id="theirVideo" autoplay playsinline></video>
+                <div class="card-img-overlay">
+                    <div class="row h-80">
+                        <div class="col">
+                            <video id="myVideo" autoplay muted playsinline></video>
+                        </div>
+                    </div>
+                    <div class="row h-20">
+                        <div class="col-3 align-self-center">
+                            <button type="button" class="btn btn-outline-primary border-0" data-toggle="modal" data-target="#myIdModal">
+                                <i class="fas fa-id-badge"></i>
+                            </button>
+                        </div>
+                        <div class="col-9 align-self-center">
+                            <button type="button" class="btn btn-outline-success mx-1" id="btnShowMakeCallModal" data-toggle="modal" data-target="#makeCallModal">
+                                <i class="fas fa-phone fa-lg"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger mx-1" id="shutOffCall">
+                                <i class="fas fa-phone fa-rotate-180 fa-lg"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger mx-1 border-0" id="mute">
+                                <i class="fas fa-microphone fa-lg" id="mic"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Id Modal -->
+    <div class="modal fade" id="myIdModal" tabindex="-1" role="dialog" aria-labelledby="myIdModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myIdModalLabel" data-i18n="index.myId"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="my-id"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Make Call Modal -->
+    <div class="modal fade" id="makeCallModal" tabindex="-1" role="dialog" aria-labelledby="makeCallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form>    
+                    <div class="modal-body pt-2 pb-1 py-2">
+                        <div class="row">
+                            <div class="col-10">
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" name="" id="theirId" aria-describedby="helpId" placeholder="">
+                                    <small id="helpId" class="form-text text-muted" data-i18n="message.inputTheirId"></small>
+                                </div>
+                            </div>
+                            <div class="col align-self-start">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row numericpad-area mt-2">
+                            <div class="col-4 btn-numeric-area">
+                                <button type="button" class="btn btn-secondary btn-lg rounded-circle btn-numeric" id="num1">1</button>
+                            </div>
+                            <div class="col-4 btn-numeric-area">
+                                <button type="button" class="btn btn-secondary btn-lg rounded-circle btn-numeric" id="num2">2</button>
+                            </div>
+                            <div class="col-4 btn-numeric-area">
+                                <button type="button" class="btn btn-secondary btn-lg rounded-circle btn-numeric" id="num3">3</button>
+                            </div>
+                        </div>
+                        <div class="row numericpad-area mt-2">
+                            <div class="col-4 btn-numeric-area">
+                                <button type="button" class="btn btn-secondary btn-lg rounded-circle btn-numeric" id="num4">4</button>
+                            </div>
+                            <div class="col-4 btn-numeric-area">
+                                <button type="button" class="btn btn-secondary btn-lg rounded-circle btn-numeric" id="num5">5</button>
+                            </div>
+                            <div class="col-4 btn-numeric-area">
+                                <button type="button" class="btn btn-secondary btn-lg rounded-circle btn-numeric" id="num6">6</button>
+                            </div>
+                        </div>
+                        <div class="row numericpad-area mt-2">
+                            <div class="col-4 btn-numeric-area">
+                                <button type="button" class="btn btn-secondary btn-lg rounded-circle btn-numeric" id="num7">7</button>
+                            </div>
+                            <div class="col-4 btn-numeric-area">
+                                <button type="button" class="btn btn-secondary btn-lg rounded-circle btn-numeric" id="num8">8</button>
+                            </div>
+                            <div class="col-4 btn-numeric-area">
+                                <button type="button" class="btn btn-secondary btn-lg rounded-circle btn-numeric" id="num9">9</button>
+                            </div>
+                        </div>
+                        <div class="row numericpad-area justify-content-center mt-2">
+                            <div class="col-4 btn-numeric-area">
+                                <button type="button" class="btn btn-secondary btn-lg rounded-circle btn-numeric" id="num0">0</button>
+                            </div>
+                        </div>    
+
+                        <div class="row mt-3">
+                            <div class="col text-center">
+                                <button type="button" class="btn btn-outline-success" id="makeCall" data-dismiss="modal">
+                                    <i class="fas fa-phone fa-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Make Calling Modal -->
+    <div class="modal fade" id="makeCallingModal" tabindex="-1" role="dialog" aria-labelledby="makeCallingModalLabel" aria-hidden="true">
+        <div class="modal-dialog h-90" role="document">
+            <div class="modal-content h-100">
+                <div class="modal-header justify-content-center">
+                    <h4 class="modal-title" id="makeCallingModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <p id="callingMessage"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" id="cancelCall" data-dismiss="modal">
+                        <i class="fas fa-phone fa-rotate-180 fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incoming Modal -->
+    <div class="modal fade" id="incomingModal" tabindex="-1" role="dialog" aria-labelledby="incomingModalLabel" aria-hidden="true">
+        <div class="modal-dialog h-90" role="document">
+            <div class="modal-content h-100">
+                <div class="modal-header justify-content-center">
+                    <h4 class="modal-title" id="incomingModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <p id="incomingMessage"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" id="rejectCall" data-dismiss="modal">
+                        <i class="fas fa-phone fa-rotate-180 fa-lg"></i>
+                        <div data-i18n="button.rejectCall"></div>
+                    </button>
+                    <button type="button" class="btn btn-outline-success" id="acceptCall" data-dismiss="modal">
+                        <i class="fas fa-phone fa-lg"></i>
+                        <div data-i18n="button.acceptCall"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
+    <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend/i18nextHttpBackend.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
+    <script src="https://unpkg.com/jquery-i18next/jquery-i18next.min.js"></script>
+
+    <script src="./js/key.js"></script>
+    <script src="./js/peer.js"></script>
+    <script src="./js/media.js"></script>
+</body>
+</html>

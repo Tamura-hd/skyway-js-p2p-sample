@@ -1,0 +1,21 @@
+{
+    "index": {
+        "title": "1対1のビデオ通話",
+        "myId": "あなたの ID",
+        "call": "発信",
+        "calling": "発信中...",
+        "incoming": "着信中..."
+    },
+    "inputLabel": {
+        "theirId": "接続先の ID"
+    },
+    "button": {
+        "acceptCall": "応答",
+        "rejectCall": "拒否"
+    },
+    "message": {
+        "inputTheirId": "会話したい相手の ID を入力して下さい。",
+        "notConnection": "接続できませんでした。",
+        "disconnected": "接続が切断されました。"
+    }
+}
