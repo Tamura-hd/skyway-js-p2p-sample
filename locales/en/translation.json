@@ -1,0 +1,21 @@
+{
+    "index": {
+        "title": "Peer to peer video call",
+        "myId": "My ID",
+        "call": "Call",
+        "calling": "Calling...",
+        "incoming": "Incoming..."
+    },
+    "inputLabel": {
+        "theirId": "Friend ID"
+    },
+    "button": {
+        "acceptCall": "Accep",
+        "rejectCall": "Reject"
+    },
+    "message": {
+        "inputTheirId": "Enter the Friend ID.",
+        "notConnection": "Could not connect to the friend.",
+        "disconnected": "Disconnected."
+    }
+}

@@ -1,0 +1,57 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+
+.h-15 {
+    height: 15%;
+}
+.h-20 {
+    height: 20%;
+}
+.h-30 {
+    height: 30%;
+}
+.h-35 {
+    height: 35%;
+}
+.h-80 {
+    height: 80%;
+}
+.h-85 {
+    height: 85%;
+}
+.h-90 {
+    height: 90%;
+}
+
+@media (max-width: 540px) {
+    .numericpad-area {
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+
+    .btn-numeric-area {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+@media (min-width: 540px) {
+    .numericpad-area {
+        margin-left: 13%;
+        margin-right: 13%;
+    }
+
+    .btn-numeric-area {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+}
+
+.btn-numeric {
+    width: 100%;
+    height: 100%;
+    padding: 0em;
+}

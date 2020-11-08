@@ -1,0 +1,1 @@
+var API_KEY = 'INPUT SKYWAY API KEY';
